@@ -1,0 +1,17 @@
+{
+  "name": "project-04-dockerized-node-service",
+  "version": "1.0.0",
+  "description": "Dockerized Node.js service with GitHub Actions CI/CD pipeline",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "docker",
+    "github-actions",
+    "devops"
+  ],
+  "author": "Rishi Chourasia",
+  "license": "ISC"
+}
