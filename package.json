@@ -4,7 +4,9 @@
   "description": "Dockerized Node.js service with GitHub Actions CI/CD pipeline",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js",
+    "dev": "node src/app.js",
+    "test": "echo \"No tests yet\""
   },
   "keywords": [
     "node",
@@ -13,5 +15,11 @@
     "devops"
   ],
   "author": "Rishi Chourasia",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "basic-auth": "^2.0.1",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongodb": "^7.5.0"
+  }
 }

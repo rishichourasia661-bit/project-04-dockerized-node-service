@@ -1,0 +1,40 @@
+services:
+
+  node-app:
+    build: .
+    container_name: node-app
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      PORT: 3000
+      USERNAME: admin
+      PASSWORD: 123456
+      SECRET_MESSAGE: Welcome
+
+    volumes:
+      - node-data:/app/data
+
+    networks:
+      - app-network
+
+  mongodb:
+    image: mongo:8
+    container_name: mongodb
+
+    ports:
+      - "27017:27017"
+
+    volumes:
+      - mongodb-data:/data/db
+
+    networks:
+      - app-network
+
+volumes:
+  node-data:
+  mongodb-data:
+
+networks:
+  app-network:
