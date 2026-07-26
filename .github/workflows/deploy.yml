@@ -1,0 +1,42 @@
+name: Deploy Node App to EC2
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh  
+          echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/github-actions
+          chmod 600 ~/.ssh/github-actions
+          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+      
+      - name: Deploy to EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no \
+            -i ~/.ssh/github-actions \
+            -p ${{ secrets.EC2_PORT }} \
+            ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+            
+              cd ~/project-04-dockerized-node-service
+              
+              echo "Pulling latest code..."
+              git pull origin main
+
+              echo "Stopping old containers..."
+              docker compose down
+
+              echo "Building and starting new containers..."
+              docker compose up -d --build
+
+              echo "Deployment completed successfully !"
+    
+          EOF
