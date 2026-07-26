@@ -31,7 +31,7 @@ The application also exposes a health endpoint for monitoring and container heal
 
 # 🏗️ Project Architecture
 
-![Project Architecture](assets/Project%20architecture.png)
+![Project Architecture](assets/architecture-diagram.png)
 
 # 📂 Project Structure
 
@@ -126,6 +126,29 @@ Docker periodically checks this endpoint to determine whether the application is
 
 # Screenshots
 
+## 📂 GitHub Repository
+
+![GitHub Repository](screenshots/github-repository.png)
+
+## 🚀 GitHub Actions
+
+![GitHub Actions](screenshots/github-actions-success.png)
+
+## ☁️ AWS EC2 Deployment
+
+![AWS EC2](screenshots/aws-ec2-instance.png)
+
+## 🐳 Docker Containers
+
+![Docker Containers](screenshots/docker-containers.png)
+
+## 🌐 Application Homepage
+
+![Application Homepage](screenshots/application-homepage.png)
+
+## ❤️ Health Check Endpoint
+
+![Health Endpoint](screenshots/health-endpoint.png)
 
 
 
