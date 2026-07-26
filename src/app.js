@@ -13,8 +13,18 @@ let db;
 const PORT = process.env.PORT || 3000;
 
 // Home Route
+
 app.get("/", (req, res) => {
     res.send("Hello, World!");
+});
+
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "UP",
+    service: "project-04-node-app",
+    version: "1.0.0",
+    timestamp: new Date().toISOString()
+  });
 });
 
 // Protected Route

@@ -12,6 +12,7 @@ services:
       USERNAME: admin
       PASSWORD: 123456
       SECRET_MESSAGE: Welcome
+      MONGODB_URI: mongodb://mongodb:27017
 
     volumes:
       - node-data:/app/data
